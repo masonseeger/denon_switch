@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+  <!--JQuery miniscript that allows us to use the click and load functions
+  in the next script-->
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous">
+  </script>
+
+  <!--JQuery script to use AJAX. Simply put the ready function is ready at any
+  time to execute any of the functions inside of it when a button is clicked.
+  Each button has been named "btn + First letter of its input + station num"
+  Each button will then load the php script while giving it the input(inp) and
+  the station(sta) while returning a string from that script to the correct div
+  -->
+  <script>
+    $(document).ready(function() {
+      $("#btnC1").click(function(){
+        $("#Station1").load("ex.php?inp=CBL/SAT&sta=one");
+      })
+      $("#btnD1").click(function(){
+        $("#Station1").load("ex.php?inp=DVD&sta=one");
+      })
+      $("#btnB1").click(function(){
+        $("#Station1").load("ex.php?inp=Blu-ray&sta=one");
+      })
+      $("#btnG1").click(function(){
+        $("#Station1").load("ex.php?inp=Game&sta=one");
+      })
+      $("#btnC2").click(function(){
+        $("#Station2").load("ex.php?inp=CBL/SAT&sta=two");
+      })
+      $("#btnD2").click(function(){
+        $("#Station2").load("ex.php?inp=DVD&sta=two");
+      })
+      $("#btnB2").click(function(){
+        $("#Station2").load("ex.php?inp=Blu-ray&sta=two");
+      })
+
+    });
+  </script>
+
+</head>
+<body>
+
+<!--simple buttons with IDs helping to map to the above script-->
+<div id="Station1">
+  <p>Click the buttons below to change input on station one</p>
+</div>
+<button id = "btnC1">CBL/SAT</button>
+<button id = "btnD1">DVD</button>
+<button id = "btnB1">Blu-ray</button>
+<button id = "btnG1">Game</button>
+
+<div id="Station2">
+  <p>Click the buttons below to change input on station one</p>
+</div>
+<button id = "btnC2">CBL/SAT</button>
+<button id = "btnD2">DVD</button>
+<button id = "btnB2">Blu-ray</button>
+
+</body>
+</html>
